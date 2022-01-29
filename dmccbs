@@ -1,0 +1,6 @@
+#!/bin/env sh
+export DMCCBS_DIR="$(dirname "$(readlink -f "$0")")"
+PRG="$1"
+shift
+
+$DMCCBS_DIR/subcommands/$PRG "$@"

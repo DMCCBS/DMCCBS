@@ -1,0 +1,8 @@
+#!/bin/env sh
+
+echo Installing dmccbs to /usr/local/bin/dmccbs as a symlink
+echo Do not delete the folder where dmccbs is at because it requires the subcommand files.
+
+sleep 2
+
+sudo ln -s $DMCCBS_DIR/dmccbs /usr/local/bin/dmccbs
