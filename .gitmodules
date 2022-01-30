@@ -1,3 +1,6 @@
 [submodule "subcommands/build_src"]
 	path = subcommands/build_src
 	url = git@github.com:DMCCBS/dmccbs_build.git
+[submodule "subcommands/newclass_src"]
+	path = subcommands/newclass_src
+	url = git@github.com:DMCCBS/dmccbs_newclass.git
