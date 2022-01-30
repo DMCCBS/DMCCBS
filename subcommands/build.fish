@@ -4,6 +4,10 @@
 mkdir -p ./src ./include ./lib ./src ./.obj_cache ./bin ./buildflags
 test ! -f ./buildflags/preprocessor.sh && echo "#!/bin/env sh" >./buildflags/preprocessor.sh && chmod +x ./buildflags/preprocessor.sh
 test ! -f ./buildflags/linker.sh && echo "#!/bin/env sh" >./buildflags/linker.sh && chmod +x ./buildflags/linker.sh
+test ! -f ./buildflags/prebuild.sh && echo "#!/bin/env sh" >./buildflags/linker.sh && chmod +x ./buildflags/prebuild.sh
+test ! -f ./buildflags/postbuild.sh && echo "#!/bin/env sh" >./buildflags/linker.sh && chmod +x ./buildflags/postbuild.sh
+
+./buildflags/prebuild.sh
 
 # Find all source files in ./src
 set -l src_files (find ./src -name '*.cc')
@@ -47,3 +51,5 @@ set -q DMC_DEBUG && echo "Linking $hashes"
 eval clang++ -fuse-ld=mold -L./lib/ (./buildflags/preprocessor.sh) -flto -o ./bin/main $hashes (./buildflags/linker.sh)
 
 rm ./src/**.cc.pp
+
+./buildflags/postbuild.sh
