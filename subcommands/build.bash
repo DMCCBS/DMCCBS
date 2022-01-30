@@ -1,4 +1,5 @@
 #!/bin/env bash
+echo "Deprecated: Use $(dmccbs build) instead"
 
 # create necessary project folders if they don't exist
 mkdir -p ./src ./include ./lib ./src ./.obj_cache ./bin ./buildflags
