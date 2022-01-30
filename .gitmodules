@@ -1,0 +1,3 @@
+[submodule "subcommands/build_src"]
+	path = subcommands/build_src
+	url = git@github.com:DMCCBS/dmccbs_build.git
